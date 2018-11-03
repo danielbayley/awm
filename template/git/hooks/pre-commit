@@ -1,0 +1,3 @@
+#! /bin/zsh -f --aliases
+alias staged='git diff --staged --diff-filter=ACMR --name-only'
+if (staged | grep -q info.plist && [ -d objects ]) git stage objects

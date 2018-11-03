@@ -1,0 +1,6 @@
+[include]
+	path = ../git/config
+[filter "plutil"]
+	clean = plutil -convert json -r -o - - | .git/hooks/clean.rb
+	smudge = .git/hooks/smudge.rb | plutil -convert xml1 -o - -
+	required = true
